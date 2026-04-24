@@ -11,7 +11,8 @@ KLineKWP1281Lib,
 FreeRTOS, 
 Adafruit_SH110X, 
 Adafruit_GFX_Library, 
-U8g2 (Оригінал).
+U8g2 (Оригінал),
+Adafruit_BusIO (Оригінал).
 
 ---
 
