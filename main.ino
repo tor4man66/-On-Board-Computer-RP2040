@@ -38,7 +38,6 @@
 #include "DisplayStateMachine.h"
 #include "ServiceModeManager.h"  
 
-// Підключаємо наш "чарівний" сон
 extern "C" {
     #include "DormantManager.h"
 }
@@ -161,7 +160,6 @@ void loop() {
         watchdog_disable();
         #endif
 
-        log_debug("Очікування ACC LOW перед Dormant...");
         while (hardware_manager_ptr->get_acc_status()) {
             delay(10);
         }
@@ -177,6 +175,7 @@ void loop() {
         watchdog_enable(WATCHDOG_TIME_RESET, 1);
         #endif
         hardware_manager_ptr->exitLowPowerMode();
+        pinMode(PIN_ACC, INPUT_PULLDOWN);
 
         #ifdef SERVICE_MODE_BUTTON_PIN
         delay(50);
