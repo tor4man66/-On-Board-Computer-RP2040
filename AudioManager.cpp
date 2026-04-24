@@ -32,6 +32,8 @@ void AudioManager::update_beep_manager() {
             log_debug("Біп завершено.");
         }
     }
+    
+    manage_sensor_alarm(); 
 }
 
 void AudioManager::play_display_mode_switch_beep() {
@@ -67,6 +69,8 @@ void AudioManager::manage_sensor_alarm() {
     unsigned long current_time_ms = _state.current_time_ms;
     if (_state.alarm_phase_start_time_ms == 0) {
         _state.alarm_phase_start_time_ms = current_time_ms;
+        _hardware.set_speaker_freq_duty(ALARM_SEQUENCE[0].frequency_hz, 32768);
+        return;
     }
 
     unsigned int current_alarm_sequence_index = _state.alarm_phase % ALARM_SEQUENCE_SIZE;
