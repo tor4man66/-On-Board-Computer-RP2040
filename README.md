@@ -7,11 +7,11 @@
 Протокол діагностики: KWP1281 (K-Line) для VAG автомобілів (Audi 80 та інші)
 
 Бібліотеки:
-KLineKWP1281Lib
-FreeRTOS
-Adafruit_SH110X
-Adafruit_GFX_Library
-U8g2 (Оригінал)
+KLineKWP1281Lib, 
+FreeRTOS, 
+Adafruit_SH110X, 
+Adafruit_GFX_Library, 
+U8g2 (Оригінал).
 
 ---
 
