@@ -104,6 +104,7 @@ void HardwareManager::_init_pins() {
 
 void HardwareManager::_init_adc() {
     log_init_debug("Ініціалізація АЦП...");
+    analogReadResolution(12);
     if (ENABLE_PIN_BOARD_VOLTAGE_ADC) {
         _voltage_adc_pin_num = PIN_ADC;
         log_init_debug_str(String("  АЦП для напруги плати (GPIO ") + _voltage_adc_pin_num + ") - УСПІХ.");
